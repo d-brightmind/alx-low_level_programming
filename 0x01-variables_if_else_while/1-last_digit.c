@@ -1,18 +1,15 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <time.h>
 
 
 
 /**
- *
- *  *  * main - print last digit in random number
+ *  *  * main - print last digit
  *
  *   *   *
  *
- *    *    * Description: print last digit in random number
+ *    *    * print last digit in random number
  *
  *     *     *
  *
