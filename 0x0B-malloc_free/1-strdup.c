@@ -1,23 +1,32 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- *	main - check the code for ALX School students.
+ *	_strdup - returns a pointer to a newly allocated space in memory,
+ *	which contains a copy of the string given as a parameter.
+ *	@str: the source string
  *
- *	Return: Always 0.
+ *	Return: returns a pointer to the duplicated string.
+ *	It returns NULL if insufficient memory was available
  */
-int main(void)
+char *_strdup(char *str)
 	{
-		char *s;
+		char *copy;
+		int i, len = 0;
 
-		s = _strdup("");
-		if (s == NULL)
-		{
-		printf("failed to allocate memory\n");
-		return (1);
-		}
-		printf("%s\n", s);
-		free(s);
-		return (0);
+		if (str == NULL)
+			return (NULL);
+
+		while (str[len] != '\0')
+			len++;
+
+		copy = (char *)malloc((sizeof(char) * len) + 1);
+		if (copy == NULL)
+			return (NULL);
+
+		for (i = 0; i < len; i++)
+			copy[i] = str[i];
+		copy[len] = '\0';
+
+		return (copy);
 	}
